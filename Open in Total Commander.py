@@ -26,7 +26,7 @@ def which(program):
 
 class SelectInTotalCommanderCommand(sublime_plugin.TextCommand):
     def set_exe(self, exe):
-        exe = which(exe)
+        exe = which(os.path.expandvars(exe))
         if exe:
             #print('exe: ', exe)
             self.exe = exe
